@@ -2,18 +2,19 @@ import {
   ContactShadows,
   Environment,
   Html,
+  Loader,
   OrbitControls,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { InfoPanel } from "./components/InfoPanel";
 
 function App() {
   const [selectedModel, setSelectedModel] = useState(null);
-  console.log(selectedModel);
+
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <header className="fixed top-0 left-0 right-0 z-10 ">
         <h1 className="mt-1 text-2xl font-bold text-center select-none">
           3D Oil Refinery Explorer
@@ -61,7 +62,7 @@ function App() {
           <br />• Click on highlighted points for details
         </p>
       </div>
-    </>
+    </Suspense>
   );
 }
 
