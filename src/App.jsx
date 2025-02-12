@@ -11,11 +11,11 @@ import { InfoPanel } from "./components/InfoPanel";
 
 function App() {
   const [selectedModel, setSelectedModel] = useState(null);
-
+  console.log(selectedModel);
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-10 ">
-        <h1 className="text-2xl font-bold text-center mt-1 select-none">
+        <h1 className="mt-1 text-2xl font-bold text-center select-none">
           3D Oil Refinery Explorer
         </h1>
       </header>
@@ -44,9 +44,14 @@ function App() {
         <Environment preset="warehouse" />
       </Canvas>
 
-      {selectedModel && <InfoPanel data={selectedModel} />}
+      {selectedModel && (
+        <InfoPanel
+          data={selectedModel}
+          onClose={() => setSelectedModel(null)}
+        />
+      )}
 
-      <div className="select-none fixed bottom-6 left-6 bg-gray-800 bg-opacity-75 backdrop-blur-sm text-white p-4 rounded-lg">
+      <div className="fixed p-4 text-white bg-gray-800 bg-opacity-75 rounded-lg select-none bottom-6 left-6 backdrop-blur-sm">
         <p className="text-sm">
           <strong>Controls:</strong>
           <br />

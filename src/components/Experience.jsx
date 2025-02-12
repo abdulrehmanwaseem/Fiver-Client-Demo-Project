@@ -99,7 +99,7 @@ const Item = ({
       <primitive object={gltf.scene} {...props} />
       {hovered && (
         <Html position={[0, 1, 0]} center>
-          <div className="bg-gray-900/95 backdrop-blur-sm text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap shadow-xl border border-white/10 transform transition-all duration-200 hover:scale-105">
+          <div className="px-3 py-2 text-sm text-white transition-all duration-200 transform border rounded-lg shadow-xl bg-gray-900/95 backdrop-blur-sm whitespace-nowrap border-white/10 hover:scale-105">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
               Click to view {title}
