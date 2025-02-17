@@ -1,4 +1,4 @@
-import { Html, useGLTF } from "@react-three/drei";
+import { Html, Stage, useGLTF } from "@react-three/drei";
 import { useState } from "react";
 
 const sceneItems = [
@@ -54,11 +54,11 @@ const sceneItems = [
 
 export const Experience = ({ onModelClick }) => {
   return (
-    <>
+    <Stage>
       {sceneItems.map((item, index) => (
         <Item key={index} {...item} onModelClick={onModelClick} />
       ))}
-    </>
+    </Stage>
   );
 };
 

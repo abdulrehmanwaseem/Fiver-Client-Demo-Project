@@ -27,7 +27,7 @@ function App() {
       >
         <mesh
           rotation={[-Math.PI / 2, 0, 0]}
-          position={[-8.5, -1, -29]}
+          position={[0, -29, -4]}
           receiveShadow
         >
           <planeGeometry args={[130, 150]} />
